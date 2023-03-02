@@ -1,0 +1,16 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+input {
+    width: 100%;
+}
+
+#scoreBoard .playerProfile{
+    font-size: 2em;
+    background: linear-gradient(to right , green 30% , cyan 90%);   
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
