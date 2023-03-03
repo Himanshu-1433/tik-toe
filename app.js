@@ -11,10 +11,11 @@ const x8 = document.getElementById("x9");
 const player1 = document.getElementById("player1");
 const player2 = document.getElementById("player2");
 
-const LeftDiognal = document.getElementsByClassName("leftDiognal");
-const rightDiognal = document.getElementsByClassName("rightDiognal");
-const vertical = document.getElementsByClassName("vertical");
-const horizontal = document.getElementsByClassName("horizontal");
+const LeftDiognal = document.getElementById("line1");
+const rightDiognal = document.getElementById("line2");
+
+const vertical = document.getElementById("line3");
+const horizontal = document.getElementById("line4");
 
 let current = 0;
 
@@ -26,7 +27,6 @@ function IsClick(event) {
         event.value = "X";
         current = 1;
         console.log(event.id);
-        document.getElementById(event.id).disabled = true;
         player2.style.borderBottom = "5px solid green";
         player1.style.borderBottom = "none";
 
@@ -46,96 +46,121 @@ const winnerText = document.getElementById('winnerText');
 function IsWinner() {
     if (x0.value == "X" && x4.value == "X" && x8.value == "X") {
         console.log("X winner");
-        LeftDiognal.style.display = "block";
+        rightDiognal.style.display = 'block';
         Greeting(0);
         disabled();
     }
     else if (x1.value == "X" && x4.value == "X" && x7.value == "X") {
         console.log("X winner");
+        vertical.style.display = 'block';
+        vertical.style.left = '15%';
         Greeting(0);
         disabled();
     }
     else if (x2.value == "X" && x4.value == "X" && x6.value == "X") {
         console.log("X winner");
+        LeftDiognal.style.display = 'block';
         Greeting(0);
         disabled();
     }
     else if (x0.value == "X" && x1.value == "X" && x2.value == "X") {
         console.log("X winner");
+        horizontal.style.display = 'block';
+        horizontal.style.top = '15%';
         Greeting(0);
         disabled();
     }
     else if (x3.value == "X" && x4.value == "X" && x5.value == "X") {
         console.log("X winner");
+        horizontal.style.display = 'block';
         Greeting(0);
         disabled();
     }
     else if (x6.value == "X" && x7.value == "X" && x8.value == "X") {
         console.log("X winner");
+        horizontal.style.display = 'block';
+        horizontal.style.top = '83%';
         Greeting(0);
         disabled();
     }
     else if (x0.value == "X" && x3.value == "X" && x6.value == "X") {
         console.log("X winner");
+        vertical.style.display = 'block';
         Greeting(0);
         disabled();
     }
     else if (x2.value == "X" && x5.value == "X" && x8.value == "X") {
         console.log("X winner");
+        vertical.style.display = 'block';
+        vertical.style.left = '46%';
         Greeting(0);
         disabled();
     }
     else if (x0.value == "O" && x4.value == "O" && x8.value == "O") {
         console.log("O winner");
+        rightDiognal.style.display = 'block';
         Greeting(1);
         disabled();
     }
     else if (x1.value == "O" && x4.value == "O" && x7.value == "O") {
         console.log("O winner");
+        vertical.style.display = 'block';
+        vertical.style.left = '15%';
         Greeting(1);
         disabled();
     }
     else if (x2.value == "O" && x4.value == "O" && x6.value == "O") {
         console.log("O winner");
+        LeftDiognal.style.display = 'block';
         Greeting(1);
         disabled();
     }
     else if (x0.value == "O" && x1.value == "O" && x2.value == "O") {
         console.log("O winner");
+        horizontal.style.display = 'block';
+        horizontal.style.top = '15%';
         Greeting(1);
         disabled();
     }
     else if (x3.value == "O" && x4.value == "O" && x5.value == "O") {
         console.log("O winner");
+        horizontal.style.display = 'block';
         Greeting(1);
         disabled();
     }
     else if (x6.value == "O" && x7.value == "O" && x8.value == "O") {
         console.log("O winner");
+        horizontal.style.display = 'block';
+        horizontal.style.top = '83%';
         Greeting(1);
         disabled();
     }
     else if (x0.value == "O" && x3.value == "O" && x6.value == "O") {
         console.log("O winner");
+        vertical.style.display = 'block';
         Greeting(1);
         disabled();
     }
     else if (x2.value == "O" && x5.value == "O" && x8.value == "O") {
         console.log("O winner");
+        vertical.style.display = 'block';
+        vertical.style.left = '46%';
         Greeting(1);
         disabled();
     }
     else if (
-        (x0.value == "X" || x0.value == "O" ) &&
-        (x1.value == "X" || x1.value == "O" ) &&
-        (x2.value == "X" || x2.value == "O" ) &&
-        (x3.value == "X" || x3.value == "O" ) &&
-        (x4.value == "X" || x4.value == "O" ) &&
-        (x5.value == "X" || x5.value == "O" ) &&
-        (x6.value == "X" || x6.value == "O" ) &&
-        (x7.value == "X" || x7.value == "O" ) &&
-        (x8.value == "X" || x8.value == "O" ) 
-        ) {
+        (x0.value == "X" || x0.value == "O") &&
+        (x1.value == "X" || x1.value == "O") &&
+        (x2.value == "X" || x2.value == "O") &&
+        (x3.value == "X" || x3.value == "O") &&
+        (x4.value == "X" || x4.value == "O") &&
+        (x5.value == "X" || x5.value == "O") &&
+        (x6.value == "X" || x6.value == "O") &&
+        (x7.value == "X" || x7.value == "O") &&
+        (x8.value == "X" || x8.value == "O")
+    ) {
+        rightDiognal.style.display = 'block';
+        LeftDiognal.style.display = 'block';
         winnerText.innerHTML = "Tie :) Better Try :) But Don't Cry (;";
     }
 }
