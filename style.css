@@ -4,18 +4,43 @@
     box-sizing: border-box;
 }
 
-input {
-    width: 100%;
-    outline: none;
-    border: 2px solid rgb(255, 3, 255);
-    border-radius: 50%;
-    padding: 50px 10px;
-    
+#gameBoard {
+    background-color: rgba(35, 41, 68, 0.774);
+    border-radius: 10px;
+    padding: 10%;
+    height: auto;
 }
 
-#scoreBoard .playerProfile{
+#gameBoard tr td {
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+#gameBoard tr td input {
+    cursor: pointer;
+    font-size: 3em;
+    width: 90%;
+    color: white;
+    outline: none;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(2, 16, 97, 0.938);
+}
+
+#scoreBoard .playerProfile {
     font-size: 2em;
-    background: linear-gradient(to right , green 30% , cyan 90%);   
+    background: linear-gradient(to right, rgb(102, 0, 128) 30%, cyan 90%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; 
+    padding-bottom: 10px;
+    transition: border 0.25s;
+}
+
+.winnerFont {
+    background: linear-gradient(to right, rgb(26, 128, 0) 30%, rgb(255, 17, 0) 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
 }
