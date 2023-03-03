@@ -131,9 +131,13 @@ function IsWinner() {
 function Greeting(num) {
     if (num == 0) {
         winnerText.innerHTML = "PLAYER 1 WAS WINNER";
+        player1.style.borderBottom = "0px solid white";
+        player2.style.borderBottom = "0px solid white";
     }
     else if (num == 1) {
         winnerText.innerHTML = "PLAYER 2 WAS WINNER";
+        player1.style.borderBottom = "0px solid white";
+        player2.style.borderBottom = "0px solid white";
     }
 }
 function disabled() {
