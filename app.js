@@ -7,17 +7,27 @@ const x5 = document.getElementById("x6");
 const x6 = document.getElementById("x7");
 const x7 = document.getElementById("x8");
 const x8 = document.getElementById("x9");
+
 const player1 = document.getElementById("player1");
 const player2 = document.getElementById("player2");
+
+const LeftDiognal = document.getElementsByClassName("leftDiognal");
+const rightDiognal = document.getElementsByClassName("rightDiognal");
+const vertical = document.getElementsByClassName("vertical");
+const horizontal = document.getElementsByClassName("horizontal");
+
 let current = 0;
-player1.style.borderBottom = " 5px solid green";
+
+player1.style.borderBottom = "5px solid green";
+
 function IsClick(event) {
+
     if (current == 0) {
         event.value = "X";
         current = 1;
         console.log(event.id);
         document.getElementById(event.id).disabled = true;
-        player2.style.borderBottom = " 5px solid green";
+        player2.style.borderBottom = "5px solid green";
         player1.style.borderBottom = "none";
 
     }
@@ -36,6 +46,7 @@ const winnerText = document.getElementById('winnerText');
 function IsWinner() {
     if (x0.value == "X" && x4.value == "X" && x8.value == "X") {
         console.log("X winner");
+        LeftDiognal.style.display = "block";
         Greeting(0);
         disabled();
     }

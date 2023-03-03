@@ -8,7 +8,7 @@
     background-color: rgba(35, 41, 68, 0.774);
     border-radius: 10px;
     padding: 10%;
-    height: auto;
+    height: 100%;
 }
 
 #gameBoard tr td {
@@ -32,9 +32,10 @@
 
 #scoreBoard .playerProfile {
     font-size: 2em;
+    margin: 40px 0px;
     background: linear-gradient(to right, rgb(102, 0, 128) 30%, cyan 90%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
     padding-bottom: 10px;
     transition: border 0.25s;
 }
@@ -42,5 +43,52 @@
 .winnerFont {
     background: linear-gradient(to right, rgb(26, 128, 0) 30%, rgb(255, 17, 0) 90%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* lines */
+
+#Lines {
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(255, 0, 0, 0.699);
+    padding: 5px;
+    transition: 0.50s;
+}
+
+.rightDiognal {
+    position: absolute;
+    left: 0px;
+    top: 48%;
+    width: 100%;
+    transform: rotate(142deg);
+    display: none;
+}
+
+.leftDiognal {
+    position: absolute;
+    left: 0px;
+    top: 48%;
+    width: 100%;
+    transform: rotate(39deg);
+    display: none;
+}
+
+.vertical {
+    position: absolute;
+    left: -16%;
+    width: 70%;
+    top: 48%;
+    transform: rotate(90deg);
+    display: none;
+}
+
+.horizontal {
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    top: 48%;
+    transform: rotate(180deg);
+    display: none;
 }
