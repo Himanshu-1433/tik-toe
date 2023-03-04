@@ -1,7 +1,7 @@
 let user1 = prompt("Enter Player-1 name");
 let user2 = prompt("Enter Player-2 name");
 
-while (user1 == null || user2 == null) {
+while ((user1 == null || user2 == null) || (user1 == '' || user2 == '') ) {
     alert("Please enter Valid name");
     user1 = prompt("Enter Player-1 name");
     user2 = prompt("Enter Player-2 name");
