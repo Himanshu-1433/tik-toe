@@ -1,3 +1,12 @@
+let user1 = prompt("Enter Player-1 name");
+let user2 = prompt("Enter Player-2 name");
+
+while (user1 == null || user2 == null) {
+    alert("Please enter Valid name");
+    user1 = prompt("Enter Player-1 name");
+    user2 = prompt("Enter Player-2 name");
+}
+
 const x0 = document.getElementById("x1");
 const x1 = document.getElementById("x2");
 const x2 = document.getElementById("x3");
@@ -8,9 +17,11 @@ const x6 = document.getElementById("x7");
 const x7 = document.getElementById("x8");
 const x8 = document.getElementById("x9");
 
-const player1 = document.getElementById("player1");
-const player2 = document.getElementById("player2");
 
+const player1 = document.getElementById("player1");
+player1.innerHTML += " " + user1;
+const player2 = document.getElementById("player2");
+player2.innerHTML += " " + user2;
 const LeftDiognal = document.getElementById("line1");
 const rightDiognal = document.getElementById("line2");
 
@@ -19,15 +30,16 @@ const horizontal = document.getElementById("line4");
 
 let current = 0;
 
-player1.style.borderBottom = "5px solid green";
+player1.style.borderBottom = "5px double white";
 
 function IsClick(event) {
 
     if (current == 0) {
         event.value = "X";
+        event.style.color = "yellow";
         current = 1;
         console.log(event.id);
-        player2.style.borderBottom = "5px solid green";
+        player2.style.borderBottom = "5px double white";
         player1.style.borderBottom = "none";
 
     }
@@ -37,7 +49,7 @@ function IsClick(event) {
         event.disable;
         console.log(event.id);
         document.getElementById(event.id).disabled = true;
-        player1.style.borderBottom = " 5px solid green";
+        player1.style.borderBottom = " 5px double white";
         player2.style.borderBottom = "none";
     }
     IsWinner();
@@ -161,17 +173,25 @@ function IsWinner() {
     ) {
         rightDiognal.style.display = 'block';
         LeftDiognal.style.display = 'block';
-        winnerText.innerHTML = "Tie :) Better Try :) But Don't Cry (;";
+        winnerText.innerHTML = "Match was Draw";
+        disabled();
     }
 }
 function Greeting(num) {
     if (num == 0) {
-        winnerText.innerHTML = "PLAYER 1 WAS WINNER";
+        document.getElementById("TopImg").style.display = "block";
+        document.getElementById("bottom").style.display = "block";
+        document.getElementById("conImg").style.display = "block";
+        winnerText.innerHTML = user1 +" WAS WINNER";
         player1.style.borderBottom = "0px solid white";
         player2.style.borderBottom = "0px solid white";
+
     }
     else if (num == 1) {
-        winnerText.innerHTML = "PLAYER 2 WAS WINNER";
+        document.getElementById("conImg").style.display = "block";
+        document.getElementById("TopImg").style.display = "block";
+        document.getElementById("bottom").style.display = "block";
+        winnerText.innerHTML = user2 +" WAS WINNER";
         player1.style.borderBottom = "0px solid white";
         player2.style.borderBottom = "0px solid white";
     }
@@ -191,3 +211,4 @@ const reset = document.getElementById("reset");
 reset.addEventListener('click', () => {
     window.location.reload();
 });
+

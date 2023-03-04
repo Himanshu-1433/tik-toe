@@ -43,26 +43,28 @@
     background-color: transparent;
 }
 
-#scoreBoard .playerProfile {
+#player1 {
     font-size: 3em;
     margin: 40px 0px;
-    /* background: linear-gradient(to right, rgb(102, 0, 128) 30%, cyan 90%); */
-    /* -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
     -webkit-text-stroke: 1px yellow;
     color: transparent;
     padding-bottom: 10px;
     transition: border 0.25s;
 }
 
-.winnerFont {
-    /* background: linear-gradient(to right, rgb(26, 128, 0) 30%, rgb(255, 17, 0) 90%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
-    -webkit-text-stroke: 1px white;
+#player2 {
+    font-size: 3em;
+    margin: 40px 0px;
+    -webkit-text-stroke: 1px rgba(255, 136, 0, 0.938);
     color: transparent;
+    padding-bottom: 10px;
+    transition: border 0.25s;
 }
 
+.winnerFont {
+    -webkit-text-stroke: 1px rgb(255, 211, 169);
+    color: transparent;
+}
 
 /* lines */
 
@@ -131,7 +133,7 @@
     }
 
     50% {
-        color: transparent;
+        color: red;
     }
 
     100% {
@@ -181,4 +183,40 @@
     100% {
         color: red;
     }
+}
+
+/* fire Work Gif  */
+
+#TopImg {
+    display: none;
+    position: absolute;
+    top: -10%;
+    left: 0px;
+    max-width: 100%;
+    height: auto;
+    z-index: -1;
+}
+
+#bottom {
+    display: none;
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+    z-index: -1;
+    right: 0px;
+    bottom: 0px;
+}
+
+img.Celebrate {
+    display: none;
+    width: 20%;
+    position: absolute;
+    bottom: 0%;
+}
+
+.Celebrate:nth-child(2) {
+    position: absolute;
+    top: -5%;
+    right: 0px;
+    transform: rotate(180deg);
 }
